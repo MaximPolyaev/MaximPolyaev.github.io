@@ -40,7 +40,7 @@ body {
       text-decoration: none; }
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   z-index: 1001;
   width: 300px;
   height: auto;
@@ -199,8 +199,4 @@ body {
   display: block; }
 
 .content-wrapper {
-  padding-left: 40px;
-  filter: blur(0px);
-  transition: filter 2s; }
-  .content-wrapper__blur {
-    filter: blur(3px); }
+  padding-left: 40px; }
