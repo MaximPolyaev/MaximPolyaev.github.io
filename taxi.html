@@ -49,70 +49,40 @@
         </li>
       </ul>
     </aside>
-    <div class="content-wrapper pt-2">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <form class="form-inline search-form"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
-              <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search">
-              <button class="btn btn-success search-form-btn" type="submit">Искать</button>
-            </form>
-          </div>
-        </div>
-        <div class="row pt-2 justify-content-md-start justify-content-sm-center">
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-9 my-1">
-            <div class="card bg-warning text-dark">
-              <h3 class="card-header">Отдел такси <i class="fas fa-taxi"></i></h3>
-              <div class="card-body">
-                <p class="card-text">Всего рабочих: <b>34</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Всего машин: <b>23</b> <i class="fas fa-car"></i></p>
+    <div class="content-wrapper">
+      <div class="container-fluid mt-2">
+        <ul class="nav nav-tabs justify-content-end position-relative" id="taxiTab" role="tablist">
+          <li class="nav-item"><a class="nav-link active" id="driversTaxi-tab" data-toggle="tab" href="#driversTaxi" role="tab" aria-controls="driversTaxi" aria-selected="true">Таксисты</a></li>
+          <li class="nav-item"><a class="nav-link" id="carsTaxi-tab" data-toggle="tab" href="#carsTaxi" role="tab" aria-controls="carsTaxi" aria-selected="false">Машины</a></li>
+        </ul>
+        <form class="form-inline search-form"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+          <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search">
+          <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+        </form>
+        <div class="tab-content" id="taxiTabContent">
+          <div class="tab-pane fade show active" id="driversTaxi" role="tabpanel" aria-labelledby="driversTaxi-tab">
+            <div class="container-fluid mt-3">
+              <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0 order-1 order-sm-0">
+                  <p>text</p>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1">
+                  <div class="taxi-drivers-param params-panel p-2 border rounded">
+                    <h5 class="text-info">Параметры</h5>
+                    <form class="params-panel-form">
+                      <div class="form-group">
+                        <h6 class="mb-0">Возраст:</h6>
+                        <input class="form-control form-control-sm" name="age" id="age">
+                        <div class="mx-2 mt-2" id="slider-range-age"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div class="card-footer"><a class="card-link text-dark" href="/taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-9 my-1">
-            <div class="card bg-dark text-white">
-              <h3 class="card-header">Отдел грузового ТС <i class="fas fa-truck"></i></h3>
-              <div class="card-body">
-                <p class="card-text">Всего рабочих: <b>241</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Всего машин: <b>21</b> <i class="fas fa-car"></i></p>
-              </div>
-              <div class="card-footer"><a class="card-link text-white" href="/"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-9 my-1">
-            <div class="card bg-primary text-white">
-              <h3 class="card-header">Автобусный отдел <i class="fas fa-bus"></i></h3>
-              <div class="card-body">
-                <p class="card-text">Всего рабочих: <b>234</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Всего машин: <b>54</b> <i class="fas fa-car"></i></p>
-              </div>
-              <div class="card-footer"><a class="card-link text-white" href="/"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-9 my-1">
-            <div class="card bg-danger text-white">
-              <h3 class="card-header">Отдел ремонта <i class="fas fa-wrench"></i></h3>
-              <div class="card-body">
-                <p class="card-text">Всего работников: <b>323</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Машин в ремонте: <b>10</b> <i class="fas fa-car"></i></p>
-                <p class="card-text">Машин списоно за последний месяц: <b>8</b> <i class="fas fa-car"></i></p>
-                <p class="card-text">Всего машин списано: <b>9</b> <i class="fas fa-car"></i></p>
-              </div>
-              <div class="card-footer"><a class="card-link text-white" href="/"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-9 my-1">
-            <div class="card bg-secondary text-white">
-              <h3 class="card-header">Отдел кадров <i class="fas fa-users"></i></h3>
-              <div class="card-body">
-                <p class="card-text">Всего задействовано в сфере: <b>32490</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Сотрудников принято на работу за месяц: <b>10</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Сотрудников уволено за за месяц: <b>15</b> <i class="fas fa-user"></i></p>
-                <p class="card-text">Всего уволено сотрудников: <b>25</b> <i class="fas fa-user"></i></p>
-              </div>
-              <div class="card-footer"><a class="card-link text-white" href="/"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
-            </div>
+          <div class="tab-pane fade" id="carsTaxi" role="tabpanel" aria-labelledby="carsTaxi-tab">
+            <p>Контент с машинами</p>
           </div>
         </div>
       </div>

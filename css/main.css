@@ -199,5 +199,20 @@ body {
 .sidebar-open .sidebar-menu-categories {
   display: block; }
 
+.search-form {
+  position: relative; }
+  .search-form-icon {
+    position: absolute; }
+  .search-form-input {
+    padding-right: 83px; }
+  .search-form-btn {
+    position: absolute;
+    right: 0; }
+
+.params-panel {
+  background-color: #fff; }
+  .params-panel .ui-slider-handle {
+    outline-style: none; }
+
 .content-wrapper {
   padding-left: 40px; }
