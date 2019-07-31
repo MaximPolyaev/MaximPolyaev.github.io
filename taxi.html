@@ -26,7 +26,7 @@
     <!-- header end-->
     <!-- aside start-->
     <!-- active sidebar add sidebar-open-->
-    <aside class="sidebar">
+    <aside class="sidebar rounded-right">
       <ul class="sidebar-menu">
         <li class="sidebar-menu_header"><i class="fa fa-arrow-right sidebar-menu_header_open"></i><span class="sidebar-menu_header_title">Главная навигация</span><i class="fa fa-times sidebar-menu_header_close"></i></li>
         <li class="sidebar-menu-item active"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a></li>
@@ -42,7 +42,7 @@
           </ul>
         </li>
         <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a><i class="fa fa-2x fa-angle-left sidebar-menu-item_angle"></i>
-          <ul class="sidebar-menu-categories">
+          <ul class="sidebar-menu-categories rounded">
             <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
             <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
           </ul>
@@ -68,12 +68,43 @@
                 </div>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1">
                   <div class="taxi-drivers-param params-panel p-2 border rounded">
-                    <h5 class="text-info">Параметры</h5>
+                    <h5 class="text-info us-none">Параметры</h5>
                     <form class="params-panel-form">
                       <div class="form-group">
-                        <h6 class="mb-0">Возраст:</h6>
-                        <input class="form-control form-control-sm" name="age" id="age">
-                        <div class="mx-2 mt-2" id="slider-range-age"></div>
+                        <h6 class="mb-0 cp">Возраст:</h6>
+                        <input class="form-control form-control-sm mt-1" name="age" id="age">
+                        <div class="mx-2 mt-2 cp" id="slider-range-age" data-min="14" data-max="100" data-start="14" data-end="100"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Пол:</h6>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label mr-1" for="maleCheckbox">Муж:</label>
+                          <input class="form-check-input cp" id="maleCheckbox" type="checkbox" value="male">
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label mr-1" for="femaleCheckbox">Жен:</label>
+                          <input class="form-check-input cp" id="femaleCheckbox" type="checkbox" value="female">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Кол-во рейсов:</h6>
+                        <input class="form-control form-control-sm mt-1" name="flights" id="flights">
+                        <div class="mx-2 mt-2 cp" id="slider-range-flights" data-min="1" data-max="150" data-start="1" data-end="150"></div>
+                      </div>
+                      <div class="form-grup">
+                        <h6 class="mb-0 us-none">Дата рейса:</h6>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text">От:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white" id="dateFlightFrom" type="text" autocomplete="off" readonly>
+                        </div>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text">До:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white" id="dateFlightTo" type="text" autocomplete="off" readonly>
+                        </div>
                       </div>
                     </form>
                   </div>

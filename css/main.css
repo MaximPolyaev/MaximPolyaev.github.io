@@ -22,6 +22,16 @@
 body {
   background-color: #ECF0F5; }
 
+.cp {
+  user-select: none;
+  cursor: pointer; }
+
+.us-none {
+  user-select: none; }
+
+.ui-datepicker {
+  z-index: 3000 !important; }
+
 .header {
   background-color: #605CA8;
   height: 50px; }
@@ -212,7 +222,8 @@ body {
 .params-panel {
   background-color: #fff; }
   .params-panel .ui-slider-handle {
-    outline-style: none; }
+    outline-style: none;
+    cursor: pointer; }
 
 .content-wrapper {
   padding-left: 40px; }
