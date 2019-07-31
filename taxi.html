@@ -56,7 +56,7 @@
           <li class="nav-item"><a class="nav-link" id="carsTaxi-tab" data-toggle="tab" href="#carsTaxi" role="tab" aria-controls="carsTaxi" aria-selected="false">Машины</a></li>
         </ul>
         <form class="form-inline search-form"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
-          <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search">
+          <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
           <button class="btn btn-success search-form-btn" type="submit">Искать</button>
         </form>
         <div class="tab-content" id="taxiTabContent">
@@ -75,15 +75,15 @@
                         <input class="form-control form-control-sm mt-1" name="age" id="age">
                         <div class="mx-2 mt-2 cp" id="slider-range-age" data-min="14" data-max="100" data-start="14" data-end="100"></div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group form-group_gender">
                         <h6 class="mb-0 us-none">Пол:</h6>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label mr-1" for="maleCheckbox">Муж:</label>
-                          <input class="form-check-input cp" id="maleCheckbox" type="checkbox" value="male">
+                          <input class="form-check-input cp" id="maleCheckbox" type="checkbox" value="male" name="gender">
                         </div>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label mr-1" for="femaleCheckbox">Жен:</label>
-                          <input class="form-check-input cp" id="femaleCheckbox" type="checkbox" value="female">
+                          <input class="form-check-input cp" id="femaleCheckbox" type="checkbox" value="female" name="gender">
                         </div>
                       </div>
                       <div class="form-group">
@@ -91,20 +91,50 @@
                         <input class="form-control form-control-sm mt-1" name="flights" id="flights">
                         <div class="mx-2 mt-2 cp" id="slider-range-flights" data-min="1" data-max="150" data-start="1" data-end="150"></div>
                       </div>
-                      <div class="form-grup">
+                      <div class="form-group">
                         <h6 class="mb-0 us-none">Дата рейса:</h6>
                         <div class="input-group input-group-sm mt-1">
                           <div class="input-group-prepend">
-                            <label class="input-group-text">От:</label>
+                            <label class="input-group-text us-none">От:</label>
                           </div>
-                          <input class="form-control d-inline-block bg-white" id="dateFlightFrom" type="text" autocomplete="off" readonly>
+                          <input class="form-control d-inline-block bg-white cp" id="dateFlightFrom" type="text" autocomplete="off" readonly>
                         </div>
                         <div class="input-group input-group-sm mt-1">
                           <div class="input-group-prepend">
-                            <label class="input-group-text">До:</label>
+                            <label class="input-group-text us-none">До:</label>
                           </div>
-                          <input class="form-control d-inline-block bg-white" id="dateFlightTo" type="text" autocomplete="off" readonly>
+                          <input class="form-control d-inline-block bg-white cp" id="dateFlightTo" type="text" autocomplete="off" readonly>
                         </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Стаж работы (лет):</h6>
+                        <input class="form-control form-control-sm mt-1" name="experience" id="experience">
+                        <div class="mx-2 mt-2 cp" id="slider-range-experience" data-min="0" data-max="150" data-start="0" data-end="150"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Выбор машины:</h6>
+                        <div class="form-group-car">
+                          <hr class="my-1">
+                          <select class="custom-select form-group-car_select" name="carMarka1">
+                            <option selected>Не выбрано</option>
+                            <option value="alias1">Рено</option>
+                            <option value="alias2">Лада</option>
+                            <option value="alias3">Аиди</option>
+                          </select>
+                          <select class="custom-select form-group-car_select mt-2" name="carModel1">
+                            <option selected>Не выбрано</option>
+                            <option value="aliasModal1">Ларгус</option>
+                            <option value="aliasModal2">А4</option>
+                            <option value="aliasModel3">А5</option>
+                            <option value="aliasModel4">А8</option>
+                          </select>
+                          <hr class="my-1">
+                        </div>
+                        <button class="btn btn-info btn-add-group-car" type="button">Добавить</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Запрос</h6>
+                        <button class="btn btn-danger">Отправить</button>
                       </div>
                     </form>
                   </div>

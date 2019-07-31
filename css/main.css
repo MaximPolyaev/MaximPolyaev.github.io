@@ -224,6 +224,16 @@ body {
   .params-panel .ui-slider-handle {
     outline-style: none;
     cursor: pointer; }
+  .params-panel .form-group-car_delete {
+    border: 2px solid transparent;
+    transition: ease-in 200ms; }
+    .params-panel .form-group-car_delete:hover {
+      border-color: #E9E9E9;
+      background-color: #E9E9E9; }
+  .params-panel .form-group-car .form-group-car_select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
 
 .content-wrapper {
   padding-left: 40px; }
