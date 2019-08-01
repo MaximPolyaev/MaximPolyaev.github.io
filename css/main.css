@@ -32,6 +32,25 @@ body {
 .ui-datepicker {
   z-index: 3000 !important; }
 
+.message-warning {
+  position: fixed;
+  z-index: 4000;
+  top: 40px;
+  margin-right: 15px;
+  margin-left: 15px; }
+
+.car-color-red {
+  color: red; }
+
+.car-color-black {
+  color: black; }
+
+.car-color-white {
+  color: white; }
+
+.car-color-blue {
+  color: blue; }
+
 .header {
   background-color: #605CA8;
   height: 50px; }
@@ -231,6 +250,10 @@ body {
       border-color: #E9E9E9;
       background-color: #E9E9E9; }
   .params-panel .form-group-car .form-group-car_select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  .params-panel .custom-select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; }
