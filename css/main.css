@@ -51,6 +51,42 @@ body {
 .car-color-blue {
   color: blue; }
 
+.card-driver-header {
+  display: flex;
+  position: relative;
+  padding-right: 40px; }
+  .card-driver-header .icon {
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem; }
+
+.card-driver-img {
+  box-sizing: content-box;
+  max-width: 200px;
+  max-height: 200px; }
+
+.card-driver-body p b {
+  margin-right: 4px; }
+
+.card-driver .driver-cars-title:hover {
+  text-decoration: underline; }
+
+.card-driver .driver-cars-title i {
+  transition: ease-in .5s; }
+  .card-driver .driver-cars-title i.active-icon-90 {
+    transform: rotate(-90deg); }
+
+.card-driver .driver-cars-list {
+  display: none;
+  font-size: 0.9rem; }
+  .card-driver .driver-cars-list .list-group-item {
+    transition: ease-in-out .25s;
+    box-shadow: inset 0px 0px 11px 13px #FFFFFF; }
+    .card-driver .driver-cars-list .list-group-item:hover {
+      background-color: #E9E9E9; }
+  .card-driver .driver-cars-list .cars-list-item {
+    text-decoration: none; }
+
 .header {
   background-color: #605CA8;
   height: 50px; }
@@ -258,5 +294,21 @@ body {
     -moz-appearance: none;
     appearance: none; }
 
+form .custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.modal button {
+  outline: none !important; }
+
+.input-group__border {
+  border: 1px solid #ced4da; }
+
 .content-wrapper {
   padding-left: 40px; }
+
+.card-taxi-img {
+  box-sizing: content-box;
+  max-width: 220px;
+  max-height: 200px; }
