@@ -29,6 +29,9 @@ body {
 .us-none {
   user-select: none; }
 
+.rounded-bottom-right {
+  border-bottom-right-radius: .25rem !important; }
+
 .ui-datepicker {
   z-index: 3000 !important; }
 
@@ -312,3 +315,37 @@ form .custom-select {
   box-sizing: content-box;
   max-width: 220px;
   max-height: 200px; }
+
+.driver-cars_title {
+  background-color: #F7F7F7; }
+
+.driver-cars_columns {
+  height: 555px;
+  overflow-y: scroll; }
+
+.driver-cars_footer {
+  background-color: #f7f7f7; }
+
+.driver-cars_body {
+  position: relative; }
+
+.driver-cars_icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  color: #989898;
+  transition: ease-in-out .25s; }
+  .driver-cars_icon:hover {
+    color: #212529; }
+
+.driver-cars_btn_modal {
+  white-space: nowrap; }
+
+.block-flights .params-panel_title {
+  font-size: 1.2rem; }
+
+.form-add-flight .add-flight-tbody tr td {
+  padding: 0; }
+  .form-add-flight .add-flight-tbody tr td select:focus, .form-add-flight .add-flight-tbody tr td input:focus {
+    box-shadow: none; }
