@@ -308,6 +308,18 @@ form .custom-select {
 .input-group__border {
   border: 1px solid #ced4da; }
 
+.form-selection .table-responsive {
+  height: 350px; }
+
+.form-add .add-tbody tr td {
+  padding: 0; }
+  .form-add .add-tbody tr td select:focus, .form-add .add-tbody tr td input:focus {
+    box-shadow: none; }
+
+.card-car-img {
+  max-width: 260px;
+  max-height: 180px; }
+
 .content-wrapper {
   padding-left: 40px; }
 
@@ -345,7 +357,9 @@ form .custom-select {
 .block-flights .params-panel_title {
   font-size: 1.2rem; }
 
-.form-add-flight .add-flight-tbody tr td {
-  padding: 0; }
-  .form-add-flight .add-flight-tbody tr td select:focus, .form-add-flight .add-flight-tbody tr td input:focus {
-    box-shadow: none; }
+.table-flights_del-btn {
+  transition: ease-in-out .25s;
+  color: #dc3545; }
+  .table-flights_del-btn:hover {
+    color: white;
+    background-color: #dc3545; }
