@@ -371,7 +371,9 @@ form .custom-select {
   background-color: inherit; }
 
 .td-form-control input {
-  height: 23px; }
+  height: 23px;
+  border: none;
+  border-bottom: 1px solid #DEE2E6; }
 
 .td-form-control input:hover, .td-form-control textarea:hover {
   background-color: inherit; }
@@ -381,3 +383,11 @@ form .custom-select {
 
 tr:hover input, tr:hover textarea {
   background-color: inherit; }
+
+.form-reasons-dismis_del {
+  transition: ease-in-out .25s;
+  cursor: pointer;
+  padding-top: 0.20rem;
+  padding-bottom: 0.20rem; }
+  .form-reasons-dismis_del:hover {
+    background-color: #ECF0F5; }
