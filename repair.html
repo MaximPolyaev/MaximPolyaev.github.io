@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Автопредприятие города</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- include google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap" rel="stylesheet">
+    <!-- include bootstrap styles-->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- include fontawesome styles-->
+    <link rel="stylesheet" href="./css/all.css">
+    <!-- include jquery ui styles-->
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <!-- include my styles-->
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
+    <!-- start wrapper-->
+    <!--header start-->
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row"><a class="header-logo" href="./">Автопредприятие города</a></div>
+      </div>
+    </header>
+    <!-- header end-->
+    <!-- aside start-->
+    <!-- active sidebar add sidebar-open-->
+    <aside class="sidebar rounded-right">
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu_header"><i class="fa fa-arrow-right sidebar-menu_header_open"></i><span class="sidebar-menu_header_title">Главная навигация</span><i class="fa fa-times sidebar-menu_header_close"></i></li>
+        <li class="sidebar-menu-item active"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/taxi.html"><i class="fas fa-2x fa-taxi sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Отдел такси</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/truck.html"><i class="fas fa-2x fa-truck sidebar-menu-item_link_icon" style="font-size: 24px;"></i><span class="sidebar-menu-item_link_title">Отдел грузового ТС</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/bus.html"><i class="fas fa-2x fa-bus sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Автобусный отдел</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/repair.html"><i class="fas fa-2x fa-wrench sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Отдел ремонта</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fas fa-2x fa-users sidebar-menu-item_link_icon" style="font-size: 24px;"></i><span class="sidebar-menu-item_link_title">Отдел кадров</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a><i class="fa fa-2x fa-angle-left sidebar-menu-item_angle"></i>
+          <ul class="sidebar-menu-categories">
+            <li class="sidebar-menu-categories-item active"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+            <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+          </ul>
+        </li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a><i class="fa fa-2x fa-angle-left sidebar-menu-item_angle"></i>
+          <ul class="sidebar-menu-categories rounded">
+            <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+            <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <div class="content-wrapper">
+      <div class="container-fluid mt-2">
+        <ul class="nav nav-tabs justify-content-end position-relative" id="repairTab" role="tablist">
+          <li class="nav-item"><a class="nav-link" id="listTeam-tab" data-toggle="tab" href="#listTeam" role="tab" aria-controls="listTeam" aria-selected="true">Бригады</a></li>
+          <li class="nav-item"><a class="nav-link" id="mechanicsWorkers-tab" data-toggle="tab" href="#mechanicsWorkers" role="tab" aria-controls="mechanicsWorkers" aria-selected="true">Работники</a></li>
+          <li class="nav-item"><a class="nav-link active" id="repairedCars-tab" data-toggle="tab" href="#repairedCars" role="tab" aria-controls="repairedCars" aria-selected="true">Машины в ремонте</a></li>
+          <li class="nav-item"><a class="nav-link" id="receivedCars-tab" data-toggle="tab" href="#receivedCars" role="tab" aria-controls="receivedCars" aria-selected="false">Поступивший транспорт</a></li>
+          <li class="nav-item"><a class="nav-link" id="decommissionedCars-tab" data-toggle="tab" href="#decommissionedCars" role="tab" aria-controls="decommissionedCars" aria-selected="false">Списанный транспорт</a></li>
+        </ul>
+        <div class="tab-content" id="repairTabContent">
+          <div class="tab-pane fade" id="listTeam" role="tabpanel" aria-labelledby="listTeam-tab">
+            <div class="container-fluid mt-3">
+              <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0 order-1 order-sm-0 pr-0 pr-sm-2">
+                  <form class="form-inline search-form mt-2 mt-sm-0"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+                    <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+                    <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+                  </form>
+                  <h3 class="mt-2">Бригады</h3>
+                  <hr class="mt-0">
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Бригада: 2</h6><i class="fas fa-users icon align-self-center mr-2"></i>
+                        </div>
+                        <div class="card-body py-2">
+                          <h6 class="card-title border-bottom border-dark">Число участников: <b>2</b></h6>
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/" onclick="modalOpen(this); return false;" data-modal="overrideTeam">Перевести</a></div>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Фамилия: <b>Поляев</b></p>
+                          <p class="card-text my-1">Имя: <b>Максим</b></p>
+                          <p class="card-text my-1">Отчество: <b>Александрович</b></p>
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <div class="card-body_links"><a class="btn btn-secondary btn-sm my-1 mr-1" href="/repair-worker.html">О работнике</a><a class="btn btn-danger btn-sm my-1 mr-1" href="/">Исключить</a><a class="btn btn-info btn-sm my-1 mr-1" href="/">Перевести</a></div>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-team.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1"><a class="btn btn-info w-100 mb-2" href="/" onclick="modalOpen(this); return false;" data-modal="addTeam">Добавить бригаду</a>
+                  <div class="taxi-drivers-param params-panel p-2 border rounded">
+                    <h5 class="text-info us-none">Параметры</h5>
+                    <form class="params-panel-form">
+                      <div class="form-group">
+                        <h6 class="mb-0 cp">Число участников:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="14" data-max="100" data-start="14" data-end="100"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 cp">Кол-во активных машин:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="14" data-max="100" data-start="14" data-end="100"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Выбор машины:</h6>
+                        <div class="form-group-car">
+                          <hr class="my-1">
+                          <select class="custom-select form-group-car_select select-car_mark" name="carMarka1">
+                            <option selected>Не выбрано</option>
+                            <option value="alias1">Рено</option>
+                            <option value="alias2">Лада</option>
+                            <option value="alias3">Аиди</option>
+                          </select>
+                          <hr class="my-1">
+                        </div>
+                        <button class="btn btn-info btn-add-group-car btn-sm" type="button">Добавить</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Запрос</h6>
+                        <button class="btn btn-danger">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="mechanicsWorkers" role="tabpanel" aria-labelledby="mechanicsWorkers-tab">
+            <div class="container-fluid mt-3">
+              <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0 order-1 order-sm-0 pr-0 pr-sm-2">
+                  <form class="form-inline search-form mt-2 mt-sm-0"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+                    <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+                    <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+                  </form>
+                  <h3 class="mt-2">Механики</h3>
+                  <hr class="mt-0">
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: -<a class="btn btn-info btn-sm ml-2" href="/" onclick="modalOpen(this); return false;" data-modal="identifyTeam">Определить</a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Бригада: <a href='/' class='text-dark'><b>1</b></a></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                          <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                          <p class="card-text my-1">Последний выход: <b>2-05-2019</b></p>
+                          <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                          <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                          <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                          <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+                        </div>
+                        <hr class="m-0">
+                        <div class="card-body py-2">
+                          <h6 class="card-title driver-cars-title cp mb-2">Активные машины <i class="fas fa-chevron-left"></i></h6>
+                          <ul class="list-group list-group-flush driver-cars-list mt-0">
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                            <li class="list-group-item"><a class="text-dark cars-list-item" href="/" title="Узнать больше">
+                                <ul class="p-0">
+                                  <li>Гос. номер: <b>c432ma33</b></li>
+                                  <li>Марка: <b>kia</b></li>
+                                  <li>Модель: <b>bruno</b></li>
+                                  <li>Тип кузова: <b>седан</b></li>
+                                  <li>Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></li>
+                                  <li>Последний выезд: <b>12-02-2007</b></li>
+                                </ul></a></li>
+                          </ul>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/repair-worker.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1"><a class="btn btn-info w-100 mb-2" href="/" onclick="modalOpen(this); return false;" data-modal="addMechanic">Добавить механика</a>
+                  <div class="taxi-drivers-param params-panel p-2 border rounded">
+                    <h5 class="text-info us-none">Параметры</h5>
+                    <form class="params-panel-form">
+                      <div class="form-group">
+                        <h6 class="mb-0 cp">Возраст:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="age" id="age">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="14" data-max="100" data-start="14" data-end="100"></div>
+                      </div>
+                      <div class="form-group form-group_gender">
+                        <h6 class="mb-0 us-none">Пол:</h6>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label mr-1" for="maleCheckbox">Муж:</label>
+                          <input class="form-check-input cp" id="maleCheckbox" type="checkbox" value="male" name="gender">
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label mr-1" for="femaleCheckbox">Жен:</label>
+                          <input class="form-check-input cp" id="femaleCheckbox" type="checkbox" value="female" name="gender">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Кол-во отремонтированных машин:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1" data-max="150" data-start="1" data-end="150"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Дата последнего выхода:</h6>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">От:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-from" type="text" autocomplete="off" readonly>
+                        </div>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">До:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-to" type="text" autocomplete="off" readonly>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Стаж работы (лет):</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="experience">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="0" data-max="150" data-start="0" data-end="150"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Выбор машины:</h6>
+                        <div class="form-group-car">
+                          <hr class="my-1">
+                          <select class="custom-select form-group-car_select select-car_mark" name="carMarka1">
+                            <option selected>Не выбрано</option>
+                            <option value="alias1">Рено</option>
+                            <option value="alias2">Лада</option>
+                            <option value="alias3">Аиди</option>
+                          </select>
+                          <hr class="my-1">
+                        </div>
+                        <button class="btn btn-info btn-add-group-car btn-sm" type="button">Добавить</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Запрос</h6>
+                        <button class="btn btn-danger">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show active" id="repairedCars" role="tabpanel" aria-labelledby="repairedCars-tab">
+            <div class="container-fluid mt-3">
+              <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0 order-1 order-sm-0 pr-0 pr-sm-2">
+                  <form class="form-inline search-form mt-2 mt-sm-0"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+                    <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+                    <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+                  </form>
+                  <h3 class="mt-2">Машины, которые в ремонте</h3>
+                  <hr class="mt-0">
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Раб.бригада: <a href='/repair-team.html' class='text-dark'><b>1</b></a></p>
+                          <p class="card-text my-1">Дата начала ремонта: <b>12-02-2017</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Кол-во ремонтов: <b>3</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-info btn-sm mr-2 mb-2" href="/edit-record-car.html">Редактировать запись</a><a class="btn btn-success btn-sm mr-2 mb-2" href="/">Забрать из ремонта</a><a class="btn btn-danger btn-sm mr-2 mb-2" href="/">Списать машину</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Зил 1141</h6><i class="fas fa-truck icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Раб.бригада: <a href='/repair-team.html' class='text-dark'><b>1</b></a></p>
+                          <p class="card-text my-1">Дата начала ремонта: <b>12-02-2017</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Грузоподъемность: <b>25 т.</b></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Кол-во ремонтов: <b>3</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-info btn-sm mr-2 mb-2" href="/edit-record-car.html">Редактировать запись</a><a class="btn btn-success btn-sm mr-2 mb-2" href="/">Забрать из ремонта</a><a class="btn btn-danger btn-sm mr-2 mb-2" href="/">Списать машину</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Volvo Sport</h6><i class="fas fa-bus icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Раб.бригада: <a href='/repair-team.html' class='text-dark'><b>1</b></a></p>
+                          <p class="card-text my-1">Дата начала ремонта: <b>12-02-2017</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Вместительность: <b>25 чел.</b></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Кол-во ремонтов: <b>3</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-info btn-sm mr-2 mb-2" href="/edit-record-car.html">Редактировать запись</a><a class="btn btn-success btn-sm mr-2 mb-2" href="/">Забрать из ремонта</a><a class="btn btn-danger btn-sm mr-2 mb-2" href="/">Списать машину</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1">
+                  <div class="params-panel p-2 border rounded">
+                    <h5 class="text-info us-none">Параметры</h5>
+                    <form class="params-panel-form">
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Выбор машины:</h6>
+                        <div class="form-group-car">
+                          <hr class="my-1">
+                          <select class="custom-select form-group-car_select select-car_mark" name="carMarka1">
+                            <option selected>Не выбрано</option>
+                            <option value="alias1">Рено</option>
+                            <option value="alias2">Лада</option>
+                            <option value="alias3">Аиди</option>
+                          </select>
+                          <hr class="my-1">
+                        </div>
+                        <button class="btn btn-info btn-add-group-car btn-sm" type="button">Добавить</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-1 us-none">Тип машины:</h6>
+                        <select class="custom-select" name="typeBodyCar">
+                          <option selected>Не выбрано</option>
+                          <option>Такси</option>
+                          <option>Грузовик</option>
+                          <option>Автобус</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 cp">Пробег (км):</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="mileage" id="mileage">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="0" data-max="150000" data-start="0" data-end="150000"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Кол-во рейсов:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="carFlights" id="carFlights">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1" data-max="150" data-start="1" data-end="150"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Дата начала ремонта:</h6>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">От:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-from" type="text" autocomplete="off" readonly>
+                        </div>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">До:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-to" type="text" autocomplete="off" readonly>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Год выпуска:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="yearCar">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1970" data-max="2016" data-start="1970" data-end="2016"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Запрос</h6>
+                        <button class="btn btn-danger">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="receivedCars" role="tabpanel" aria-labelledby="receivedCars-tab">
+            <div class="container-fluid mt-3">
+              <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0 order-1 order-sm-0 pr-0 pr-sm-2">
+                  <form class="form-inline search-form mt-2 mt-sm-0"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+                    <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+                    <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+                  </form>
+                  <h3 class="mt-2">Поступивший транспорт</h3>
+                  <hr class="mt-0">
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Дата пост. машины: <b>12-03-2016</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Кол-во ремонтов: <b>3</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-success btn-sm mr-2 mb-2" href="/add-record-car.html">Сделать запись</a><a class="btn btn-danger btn-sm" href="/">Списать машину</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Зил 1141</h6><i class="fas fa-truck icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Дата пост. машины: <b>12-03-2016</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Грузоподъемность: <b>25 т.</b></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Кол-во ремонтов: <b>3</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-success btn-sm mr-2 mb-2" href="/add-record-car.html">Сделать запись</a><a class="btn btn-danger btn-sm" href="/">Списать машину</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Volvo Sport</h6><i class="fas fa-bus icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Дата пост. машины: <b>12-03-2016</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Вместительность: <b>25 чел.</b></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Кол-во ремонтов: <b>3</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-success btn-sm mr-2 mb-2" href="/add-record-car.html">Сделать запись</a><a class="btn btn-danger btn-sm" href="/">Списать машину</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1"><a class="btn btn-info w-100 mb-2" href="/" onclick="modalOpen(this); return false;" data-modal="addCarRepair">Добавить машину</a>
+                  <div class="params-panel p-2 border rounded">
+                    <h5 class="text-info us-none">Параметры</h5>
+                    <form class="params-panel-form">
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Выбор машины:</h6>
+                        <div class="form-group-car">
+                          <hr class="my-1">
+                          <select class="custom-select form-group-car_select select-car_mark" name="carMarka1">
+                            <option selected>Не выбрано</option>
+                            <option value="alias1">Рено</option>
+                            <option value="alias2">Лада</option>
+                            <option value="alias3">Аиди</option>
+                          </select>
+                          <hr class="my-1">
+                        </div>
+                        <button class="btn btn-info btn-add-group-car btn-sm" type="button">Добавить</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-1 us-none">Тип машины:</h6>
+                        <select class="custom-select" name="typeBodyCar">
+                          <option selected>Не выбрано</option>
+                          <option>Такси</option>
+                          <option>Грузовик</option>
+                          <option>Автобус</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 cp">Пробег (км):</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="mileage" id="mileage">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="0" data-max="150000" data-start="0" data-end="150000"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Кол-во рейсов:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="carFlights" id="carFlights">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1" data-max="150" data-start="1" data-end="150"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Дата поступления машины:</h6>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">От:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-from" type="text" autocomplete="off" readonly>
+                        </div>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">До:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-to" type="text" autocomplete="off" readonly>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Год выпуска:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="yearCar">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1970" data-max="2016" data-start="1970" data-end="2016"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Запрос</h6>
+                        <button class="btn btn-danger">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="decommissionedCars" role="tabpanel" aria-labelledby="decommissionedCars-tab">
+            <div class="container-fluid mt-3">
+              <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0 order-1 order-sm-0 pr-0 pr-sm-2">
+                  <form class="form-inline search-form mt-2 mt-sm-0"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+                    <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+                    <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+                  </form>
+                  <h3 class="mt-2">Списанный транспорт</h3>
+                  <hr class="mt-0">
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Дата спис. машины: <b>13-04-2009</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-info btn-sm mr-2 mb-2" href="/end-record-car.html">Посмотреть запись</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Зил 1141</h6><i class="fas fa-truck icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Дата спис. машины: <b>13-04-2009</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Грузоподъемность: <b>25 т.</b></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-info btn-sm mr-2 mb-2" href="/end-record-car.html">Посмотреть запись</a></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-sm-center">
+                      <div class="card card-driver border-secondary h-100">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Volvo Sport</h6><i class="fas fa-bus icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top card-taxi-img align-self-center my-3 rounded" src="img/no-photo.jpg" alt="user">
+                        <hr class="m-0">
+                        <div class="card-body card-driver-body py-2">
+                          <p class="card-text my-1">Дата спис. машины: <b>13-04-2009</b></p>
+                          <hr class="my-1">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Вместительность: <b>25 чел.</b></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-secondary btn-sm mr-2 mb-2" href="/car-bus.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a><a class="btn btn-info btn-sm mr-2 mb-2" href="/end-record-car.html">Посмотреть запись</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pr-0 pl-0 pl-sm-1 order-0 order-sm-1">
+                  <div class="params-panel p-2 border rounded">
+                    <h5 class="text-info us-none">Параметры</h5>
+                    <form class="params-panel-form">
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Выбор машины:</h6>
+                        <div class="form-group-car">
+                          <hr class="my-1">
+                          <select class="custom-select form-group-car_select select-car_mark" name="carMarka1">
+                            <option selected>Не выбрано</option>
+                            <option value="alias1">Рено</option>
+                            <option value="alias2">Лада</option>
+                            <option value="alias3">Аиди</option>
+                          </select>
+                          <hr class="my-1">
+                        </div>
+                        <button class="btn btn-info btn-add-group-car btn-sm" type="button">Добавить</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-1 us-none">Тип машины:</h6>
+                        <select class="custom-select" name="typeBodyCar">
+                          <option selected>Не выбрано</option>
+                          <option>Такси</option>
+                          <option>Грузовик</option>
+                          <option>Автобус</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 cp">Пробег (км):</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="mileage" id="mileage">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="0" data-max="150000" data-start="0" data-end="150000"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Кол-во рейсов:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="carFlights" id="carFlights">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1" data-max="150" data-start="1" data-end="150"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Дата списания машины:</h6>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">От:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-from" type="text" autocomplete="off" readonly>
+                        </div>
+                        <div class="input-group input-group-sm mt-1">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text us-none">До:</label>
+                          </div>
+                          <input class="form-control d-inline-block bg-white cp datepicker-to" type="text" autocomplete="off" readonly>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Год выпуска:</h6>
+                        <input class="form-control form-control-sm mt-1 slider-range-input" name="yearCar">
+                        <div class="mx-2 mt-2 cp slider-range-controls" data-min="1970" data-max="2016" data-start="1970" data-end="2016"></div>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="mb-0 us-none">Запрос</h6>
+                        <button class="btn btn-danger">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end wrapper-->
+    <div class="modal fade in" id="addCarRepair" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Добавление машины</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Отдел:</div>
+                  </div>
+                  <select class="custom-select form-control">
+                    <option selected>Не выбрано</option>
+                    <option value="alias1">Такси</option>
+                    <option value="alias2">Грузовики</option>
+                    <option value="alias3">Автобусы</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-input-car">
+                <div class="input-group form-input-car_mark">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Марка:</div>
+                  </div>
+                  <select class="custom-select form-control">
+                    <option selected>Не выбрано</option>
+                    <option value="alias1">Киа</option>
+                    <option value="alias2">Шевролет</option>
+                    <option value="alias3">Бмв</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Гос. номер:</div>
+                  </div>
+                  <select class="custom-select form-control">
+                    <option selected>Не выбрано</option>
+                    <option value="alias">23432423</option>
+                    <option value="alias">234324</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <form class="form-inline search-form my-3"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+              <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+              <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+            </form>
+            <form class="form-selection mb-3" id="addCarDbRepair">
+              <div class="table-responsive">
+                <table class="table mb-0 table-hover table-bordered table-modal rounded">
+                  <thead>
+                    <tr>
+                      <th scope="col">Гос. номер</th>
+                      <th scope="col">Марка</th>
+                      <th scope="col">Модель</th>
+                      <th scope="col">Пробег</th>
+                      <th class="text-center" scope="col"><i class="fas fa-check"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="cp">
+                      <td class="form-selection_id">j321kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j322kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j323kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j324kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j325kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j326kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j326kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j328kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                    <tr class="cp">
+                      <td class="form-selection_id">j329kj32</td>
+                      <td>Kia</td>
+                      <td>Rio</td>
+                      <td>89932 км</td>
+                      <td class="form-selection_option text-center"><i class='fas fa-times text-danger text-success'></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <input class="form-selection_data" name="selectCar" value="e343rr344" style="display: none">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info" form="addCarDbRepair">Добавить</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade in" id="addMechanic" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Добавление механика <i class="fas fa-user"></i></h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Бригада</div>
+                  </div>
+                  <select class="custom-select">
+                    <option selected>Не выбрано</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Фамилия:</div>
+                  </div>
+                  <input class="form-control" type="text" name="surname">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Имя:</div>
+                  </div>
+                  <input class="form-control" type="text" name="name">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Отчество:</div>
+                  </div>
+                  <input class="form-control" type="text" name="patronymic">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Дата рождения:</div>
+                  </div>
+                  <input class="form-control d-inline-block bg-white cp" id="dateAgeUser" type="text" autocomplete="off" readonly>
+                </div>
+              </div>
+              <div class="form-group form-group_gender">
+                <div class="input-group input-group__border rounded">
+                  <div class="input-group-prepend mr-3">
+                    <div class="input-group-text border-top-0 border-bottom-0 border-left-0">Пол:</div>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label mr-1" for="maleInput">Муж:</label>
+                    <input class="form-check-input cp" id="maleInput" type="checkbox" value="male" name="gender">
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label mr-1" for="femaleInput">Жен:</label>
+                    <input class="form-check-input cp" id="femaleInput" type="checkbox" value="female" name="gender">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group form-input-car">
+                <div class="input-group form-input-car_mark">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Стаж работы (в годах):</div>
+                  </div>
+                  <input class="form-control" type="text">
+                </div>
+              </div>
+              <div class="form-group form-input-car">
+                <div class="input-group form-input-car_mark">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Номер телефона (+7 ... ):</div>
+                  </div>
+                  <input class="form-control" type="text">
+                </div>
+              </div>
+              <div class="form-group form-input-car">
+                <div class="input-group form-input-car_mark">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Адрес:</div>
+                  </div>
+                  <input class="form-control" type="text">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info">Добавить</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade in" id="identifyTeam" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Выберите бригаду:</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <select class="custom-select">
+                <option selected>Не выбрано</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success">Выбрать</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade in" id="overrideTeam" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Выберите бригаду:</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <select class="custom-select">
+                <option selected>Не выбрано</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info">Перевести</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade in" id="addTeam" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Введите название бригады:</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input class="form-control" type="text">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success">Добавить</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/modules.min.js"></script>
+    <script src="./js/main.min.js"></script>
+  </body>
+</html>

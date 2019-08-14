@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Автопредприятие города</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- include google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap" rel="stylesheet">
+    <!-- include bootstrap styles-->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- include fontawesome styles-->
+    <link rel="stylesheet" href="./css/all.css">
+    <!-- include jquery ui styles-->
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <!-- include mp_timepicker styles-->
+    <link rel="stylesheet" href="./css/mp_timepicker.css">
+    <!-- include my styles-->
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
+    <!-- start wrapper-->
+    <!--header start-->
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row"><a class="header-logo" href="./">Автопредприятие города</a></div>
+      </div>
+    </header>
+    <!-- header end-->
+    <!-- aside start-->
+    <!-- active sidebar add sidebar-open-->
+    <aside class="sidebar rounded-right">
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu_header"><i class="fa fa-arrow-right sidebar-menu_header_open"></i><span class="sidebar-menu_header_title">Главная навигация</span><i class="fa fa-times sidebar-menu_header_close"></i></li>
+        <li class="sidebar-menu-item active"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/taxi.html"><i class="fas fa-2x fa-taxi sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Отдел такси</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/truck.html"><i class="fas fa-2x fa-truck sidebar-menu-item_link_icon" style="font-size: 24px;"></i><span class="sidebar-menu-item_link_title">Отдел грузового ТС</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/bus.html"><i class="fas fa-2x fa-bus sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Автобусный отдел</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/repair.html"><i class="fas fa-2x fa-wrench sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Отдел ремонта</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fas fa-2x fa-users sidebar-menu-item_link_icon" style="font-size: 24px;"></i><span class="sidebar-menu-item_link_title">Отдел кадров</span></a></li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a><i class="fa fa-2x fa-angle-left sidebar-menu-item_angle"></i>
+          <ul class="sidebar-menu-categories">
+            <li class="sidebar-menu-categories-item active"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+            <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+          </ul>
+        </li>
+        <li class="sidebar-menu-item"><a class="sidebar-menu-item_link" href="/"><i class="fa fa-2x fa-university sidebar-menu-item_link_icon"></i><span class="sidebar-menu-item_link_title">Главная</span></a><i class="fa fa-2x fa-angle-left sidebar-menu-item_angle"></i>
+          <ul class="sidebar-menu-categories rounded">
+            <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+            <li class="sidebar-menu-categories-item"><a class="sidebar-menu-categories-item_link" href="/"><i class="fa fa-circle sidebar-menu-categories-item_link_icon"></i><span class="sidebar-menu-categories-item_link_title">Главная</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <div class="content-wrapper">
+      <div class="container-fluid mt-2">
+        <div class="row">
+          <div class="col-xl-4">
+            <div class="card card-driver border-dark h-100">
+              <div class="card-header card-driver-header">
+                <h6 class="title mb-0">Поляев Максим Александрович</h6><i class="fas fa-user icon align-self-center mr-2"></i>
+              </div><img class="card-img-top card-driver-img align-self-center my-3 rounded-circle" src="img/vasya.jpg" alt="user">
+              <hr class="m-0">
+              <div class="card-body card-driver-body py-2">
+                <h4 class="card-title border-bottom">Механик</h4>
+                <p class="card-text my-1">Бригада: <a href='/'><b>2</b></a></p>
+                <p class="card-text my-1"><a class="btn btn-info btn-sm" href="/" onclick="modalOpen(this); return false;" data-modal="identifyTeam">Определить в другую бригаду</a></p>
+                <hr class="my-1">
+                <p class="card-text my-1">Таб. номер: <b>12323</b><i class="fas fa-id-card"></i></p>
+                <p class="card-text my-1">Дата рождения: <b>12-02-1999</b></p>
+                <p class="card-text my-1">Последний выезд: <b>2-05-2019</b></p>
+                <p class="card-text my-1">Стаж работы: <b>3 года</b></p>
+                <p class="card-text my-1">Всего машин отремонтировано: <b>48</b></p>
+                <p class="card-text my-1">Номер телефона:&nbsp;<a class="text-dark" href="tel:+79209174235"><b>+7 920 917-42-35</b><i class="fas fa-phone"></i></a></p>
+                <p class="card-text my-1">Адрес проживания:&nbsp;<b>Владимирская обл., г. Ковров, ул. Маяковского, д.4</b><i class="fas fa-address-card"></i></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-8 mt-3 mt-xl-0">
+            <div class="driver-cars bg-white rounded border border-dark">
+              <h6 class="driver-cars_title py-2 pl-3 m-0 border-bottom rounded-top">Машины бригады механика</h6>
+              <div class="row m-0 driver-cars_columns pb-2">
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 driver-cars_col">
+                  <div class="card card-driver border-secondary mt-2">
+                    <div class="row">
+                      <div class="col-5 border-right pr-0">
+                        <div class="card-header card-driver-header">
+                          <h6 class="title mb-0">Hyundai Solaris</h6><i class="fas fa-car icon align-self-center mr-2"></i>
+                        </div><img class="card-img-top my-3 rounded-0" src="img/no-photo.jpg" alt="user">
+                      </div>
+                      <div class="col-7 pl-0">
+                        <div class="card-body card-driver-body py-2 driver-cars_body">
+                          <p class="card-text my-1">Гос. номер: <b>f878ss177</b></p>
+                          <p class="card-text my-1">Тип кузова: <b>седан</b></p>
+                          <p class="card-text my-1">Цвет: <b>красный</b> <i class="fas fa-car car-color-red"></i></p>
+                          <p class="card-text my-1">Пробег: <b>234234 км</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>234</b></p>
+                          <p class="card-text my-1">Год выпуска: <b>1970</b></p>
+                          <p class="card-text my-1">Всего рейсов: <b>48</b></p><i class="fas fa-times driver-cars_icon mr-2 cp"></i>
+                        </div>
+                        <div class="card-footer"><a class="card-link text-dark" href="/car-taxi.html"><i class="fas fa-arrow-circle-right"></i> Подробнее</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="driver-cars_footer w-100 border-top rounded-bottom">
+                <div class="container-fluid">
+                  <div class="row py-2">
+                    <div class="col-12">
+                      <form class="form-inline search-form mt-2 mt-sm-0"><i class="fas fa-search form-control-feedback search-form-icon ml-1" aria-hidden="true"></i>
+                        <input class="form-control w-100 pl-4 search-form-input" type="text" placeholder="Поиск..." aria-label="Search" name="searchGlobal">
+                        <button class="btn btn-success search-form-btn" type="submit">Искать</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end wrapper-->
+    <div class="modal fade in" id="identifyTeam" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Выберите бригаду:</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <select class="custom-select">
+                <option selected>Не выбрано</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success">Выбрать</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade in" id="del-warning-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title text-danger">Вы точно хотите удалить запись?</h5>
+            <button class="close" type="button" data-dismiss="modal" onclick="cancelDelFlight();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body d-flex">
+            <button class="btn btn-success flex-grow-1 mr-2" type="button" onclick="delFlight();" data-dismiss="modal">Да</button>
+            <button class="btn btn-danger flex-grow-1" type="button" onclick="cancelDelFlight();" data-dismiss="modal">Нет</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/modules.min.js"></script>
+    <script src="./js/main.min.js"></script>
+  </body>
+</html>

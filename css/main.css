@@ -32,6 +32,9 @@ body {
 .rounded-bottom-right {
   border-bottom-right-radius: .25rem !important; }
 
+.shadow-0 {
+  box-shadow: none !important; }
+
 .ui-datepicker {
   z-index: 3000 !important; }
 
@@ -313,7 +316,7 @@ form .custom-select {
 
 .form-add .add-tbody tr td {
   padding: 0; }
-  .form-add .add-tbody tr td select:focus, .form-add .add-tbody tr td input:focus {
+  .form-add .add-tbody tr td select:focus, .form-add .add-tbody tr td input:focus, .form-add .add-tbody tr td textarea:focus {
     box-shadow: none; }
 
 .card-car-img {
@@ -363,3 +366,18 @@ form .custom-select {
   .table-flights_del-btn:hover {
     color: white;
     background-color: #dc3545; }
+
+.td-form-control:hover input, .td-form-control:hover textarea {
+  background-color: inherit; }
+
+.td-form-control input {
+  height: 23px; }
+
+.td-form-control input:hover, .td-form-control textarea:hover {
+  background-color: inherit; }
+
+.td-form-control input:focus, .td-form-control textarea:focus {
+  background-color: inherit; }
+
+tr:hover input, tr:hover textarea {
+  background-color: inherit; }
